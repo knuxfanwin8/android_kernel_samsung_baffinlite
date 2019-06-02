@@ -143,14 +143,14 @@ fw-shipped-$(CONFIG_YAM) += yam/1200.bin yam/9600.bin
 
 fw-shipped-$(CONFIG_KEYBOARD_TC360_TOUCHKEY) += coreriver/tc360.fw\
 
-TSPFIRMWARE_DIRECTORY_MMS144 = firmware/tsp_melfas/baffinlite
+TSPFIRMWARE_DIRECTORY_MMS144 = $(srctree)/firmware/tsp_melfas/baffinlite
 ifeq ($(shell test -d $(TSPFIRMWARE_DIRECTORY_MMS144) && echo yes),yes)
 fw-shipped-$(CONFIG_TOUCHSCREEN_MELFAS_MMS144) += tsp_melfas/baffinlite/melfas.fw
 fw-shipped-$(CONFIG_TOUCHSCREEN_MELFAS_MMS144) += tsp_melfas/baffinlite/BOOT.fw
 fw-shipped-$(CONFIG_TOUCHSCREEN_MELFAS_MMS144) += tsp_melfas/baffinlite/CORE.fw
 fw-shipped-$(CONFIG_TOUCHSCREEN_MELFAS_MMS144) += tsp_melfas/baffinlite/CONF.fw
 else
-$(warning '$(TSPFIRMWARE_DIRECTORY_MMS144)' directory dose not exist)
+$(warning '$(TSPFIRMWARE_DIRECTORY_MMS144)' directory does not exist)
 endif
 
 fw-shipped-all := $(fw-shipped-y) $(fw-shipped-m) $(fw-shipped-)
